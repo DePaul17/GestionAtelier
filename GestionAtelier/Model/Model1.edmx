@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BD_GLAtelierModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="idPers" />
+          </Key>
+          <Property Name="idPers" Type="int" Nullable="false" />
+          <Property Name="CNIClient" Type="nvarchar" MaxLength="50" />
+          <Property Name="SexeClient" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Facture">
+          <Key>
+            <PropertyRef Name="idPers" />
+          </Key>
+          <Property Name="idPers" Type="int" Nullable="false" />
+          <Property Name="qteF" Type="int" />
+          <Property Name="designationF" Type="nvarchar" MaxLength="50" />
+          <Property Name="prixUnitF" Type="int" />
+          <Property Name="montantF" Type="int" />
+          <Property Name="DateHeureF" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Gerant">
+          <Key>
+            <PropertyRef Name="idPers" />
+          </Key>
+          <Property Name="idPers" Type="int" Nullable="false" />
+          <Property Name="idGer" Type="nvarchar" MaxLength="50" />
+          <Property Name="mdpGer" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="mesure">
+          <Key>
+            <PropertyRef Name="idPers" />
+          </Key>
+          <Property Name="idPers" Type="int" Nullable="false" />
+          <Property Name="taille" Type="int" />
+          <Property Name="stature" Type="int" />
+          <Property Name="tour_poitrine" Type="int" />
+          <Property Name="tour_taille" Type="int" />
+          <Property Name="tour_hanche" Type="int" />
+          <Property Name="long_manche" Type="int" />
+          <Property Name="tour_cou" Type="int" />
+          <Property Name="long_pant" Type="int" />
+          <Property Name="long_dev" Type="int" />
+          <Property Name="tour_bras" Type="int" />
+          <Property Name="hauteur_poitrine" Type="int" />
+        </EntityType>
+        <EntityType Name="Personne">
+          <Key>
+            <PropertyRef Name="idPers" />
+          </Key>
+          <Property Name="idPers" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NomPers" Type="nvarchar" MaxLength="50" />
+          <Property Name="PrenomPers" Type="nvarchar" MaxLength="50" />
+          <Property Name="AdressePers" Type="nvarchar" MaxLength="50" />
+          <Property Name="TelPers" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="BD_GLAtelierModelStoreContainer">
+          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Facture" EntityType="Self.Facture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gerant" EntityType="Self.Gerant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mesure" EntityType="Self.mesure" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personne" EntityType="Self.Personne" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BD_GLAtelierModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="idPers" />
+          </Key>
+          <Property Name="idPers" Type="Int32" Nullable="false" />
+          <Property Name="CNIClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SexeClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Facture">
+          <Key>
+            <PropertyRef Name="idPers" />
+          </Key>
+          <Property Name="idPers" Type="Int32" Nullable="false" />
+          <Property Name="qteF" Type="Int32" />
+          <Property Name="designationF" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="prixUnitF" Type="Int32" />
+          <Property Name="montantF" Type="Int32" />
+          <Property Name="DateHeureF" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Gerant">
+          <Key>
+            <PropertyRef Name="idPers" />
+          </Key>
+          <Property Name="idPers" Type="Int32" Nullable="false" />
+          <Property Name="idGer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mdpGer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="mesure">
+          <Key>
+            <PropertyRef Name="idPers" />
+          </Key>
+          <Property Name="idPers" Type="Int32" Nullable="false" />
+          <Property Name="taille" Type="Int32" />
+          <Property Name="stature" Type="Int32" />
+          <Property Name="tour_poitrine" Type="Int32" />
+          <Property Name="tour_taille" Type="Int32" />
+          <Property Name="tour_hanche" Type="Int32" />
+          <Property Name="long_manche" Type="Int32" />
+          <Property Name="tour_cou" Type="Int32" />
+          <Property Name="long_pant" Type="Int32" />
+          <Property Name="long_dev" Type="Int32" />
+          <Property Name="tour_bras" Type="Int32" />
+          <Property Name="hauteur_poitrine" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Personne">
+          <Key>
+            <PropertyRef Name="idPers" />
+          </Key>
+          <Property Name="idPers" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomPers" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PrenomPers" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AdressePers" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TelPers" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="BD_GLAtelierEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Client" EntityType="Self.Client" />
+          <EntitySet Name="Facture" EntityType="Self.Facture" />
+          <EntitySet Name="Gerant" EntityType="Self.Gerant" />
+          <EntitySet Name="mesure" EntityType="Self.mesure" />
+          <EntitySet Name="Personne" EntityType="Self.Personne" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BD_GLAtelierModelStoreContainer" CdmEntityContainer="BD_GLAtelierEntities">
+          <EntitySetMapping Name="Client">
+            <EntityTypeMapping TypeName="BD_GLAtelierModel.Client">
+              <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="idPers" ColumnName="idPers" />
+                <ScalarProperty Name="CNIClient" ColumnName="CNIClient" />
+                <ScalarProperty Name="SexeClient" ColumnName="SexeClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Facture">
+            <EntityTypeMapping TypeName="BD_GLAtelierModel.Facture">
+              <MappingFragment StoreEntitySet="Facture">
+                <ScalarProperty Name="idPers" ColumnName="idPers" />
+                <ScalarProperty Name="qteF" ColumnName="qteF" />
+                <ScalarProperty Name="designationF" ColumnName="designationF" />
+                <ScalarProperty Name="prixUnitF" ColumnName="prixUnitF" />
+                <ScalarProperty Name="montantF" ColumnName="montantF" />
+                <ScalarProperty Name="DateHeureF" ColumnName="DateHeureF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gerant">
+            <EntityTypeMapping TypeName="BD_GLAtelierModel.Gerant">
+              <MappingFragment StoreEntitySet="Gerant">
+                <ScalarProperty Name="idPers" ColumnName="idPers" />
+                <ScalarProperty Name="idGer" ColumnName="idGer" />
+                <ScalarProperty Name="mdpGer" ColumnName="mdpGer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mesure">
+            <EntityTypeMapping TypeName="BD_GLAtelierModel.mesure">
+              <MappingFragment StoreEntitySet="mesure">
+                <ScalarProperty Name="idPers" ColumnName="idPers" />
+                <ScalarProperty Name="taille" ColumnName="taille" />
+                <ScalarProperty Name="stature" ColumnName="stature" />
+                <ScalarProperty Name="tour_poitrine" ColumnName="tour_poitrine" />
+                <ScalarProperty Name="tour_taille" ColumnName="tour_taille" />
+                <ScalarProperty Name="tour_hanche" ColumnName="tour_hanche" />
+                <ScalarProperty Name="long_manche" ColumnName="long_manche" />
+                <ScalarProperty Name="tour_cou" ColumnName="tour_cou" />
+                <ScalarProperty Name="long_pant" ColumnName="long_pant" />
+                <ScalarProperty Name="long_dev" ColumnName="long_dev" />
+                <ScalarProperty Name="tour_bras" ColumnName="tour_bras" />
+                <ScalarProperty Name="hauteur_poitrine" ColumnName="hauteur_poitrine" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personne">
+            <EntityTypeMapping TypeName="BD_GLAtelierModel.Personne">
+              <MappingFragment StoreEntitySet="Personne">
+                <ScalarProperty Name="idPers" ColumnName="idPers" />
+                <ScalarProperty Name="NomPers" ColumnName="NomPers" />
+                <ScalarProperty Name="PrenomPers" ColumnName="PrenomPers" />
+                <ScalarProperty Name="AdressePers" ColumnName="AdressePers" />
+                <ScalarProperty Name="TelPers" ColumnName="TelPers" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

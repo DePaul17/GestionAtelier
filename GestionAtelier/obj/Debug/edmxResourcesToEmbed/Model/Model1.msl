@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BD_GLAtelierModelStoreContainer" CdmEntityContainer="BD_GLAtelierEntities">
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="BD_GLAtelierModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="idPers" ColumnName="idPers" />
+          <ScalarProperty Name="CNIClient" ColumnName="CNIClient" />
+          <ScalarProperty Name="SexeClient" ColumnName="SexeClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facture">
+      <EntityTypeMapping TypeName="BD_GLAtelierModel.Facture">
+        <MappingFragment StoreEntitySet="Facture">
+          <ScalarProperty Name="idPers" ColumnName="idPers" />
+          <ScalarProperty Name="qteF" ColumnName="qteF" />
+          <ScalarProperty Name="designationF" ColumnName="designationF" />
+          <ScalarProperty Name="prixUnitF" ColumnName="prixUnitF" />
+          <ScalarProperty Name="montantF" ColumnName="montantF" />
+          <ScalarProperty Name="DateHeureF" ColumnName="DateHeureF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gerant">
+      <EntityTypeMapping TypeName="BD_GLAtelierModel.Gerant">
+        <MappingFragment StoreEntitySet="Gerant">
+          <ScalarProperty Name="idPers" ColumnName="idPers" />
+          <ScalarProperty Name="idGer" ColumnName="idGer" />
+          <ScalarProperty Name="mdpGer" ColumnName="mdpGer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mesure">
+      <EntityTypeMapping TypeName="BD_GLAtelierModel.mesure">
+        <MappingFragment StoreEntitySet="mesure">
+          <ScalarProperty Name="idPers" ColumnName="idPers" />
+          <ScalarProperty Name="taille" ColumnName="taille" />
+          <ScalarProperty Name="stature" ColumnName="stature" />
+          <ScalarProperty Name="tour_poitrine" ColumnName="tour_poitrine" />
+          <ScalarProperty Name="tour_taille" ColumnName="tour_taille" />
+          <ScalarProperty Name="tour_hanche" ColumnName="tour_hanche" />
+          <ScalarProperty Name="long_manche" ColumnName="long_manche" />
+          <ScalarProperty Name="tour_cou" ColumnName="tour_cou" />
+          <ScalarProperty Name="long_pant" ColumnName="long_pant" />
+          <ScalarProperty Name="long_dev" ColumnName="long_dev" />
+          <ScalarProperty Name="tour_bras" ColumnName="tour_bras" />
+          <ScalarProperty Name="hauteur_poitrine" ColumnName="hauteur_poitrine" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personne">
+      <EntityTypeMapping TypeName="BD_GLAtelierModel.Personne">
+        <MappingFragment StoreEntitySet="Personne">
+          <ScalarProperty Name="idPers" ColumnName="idPers" />
+          <ScalarProperty Name="NomPers" ColumnName="NomPers" />
+          <ScalarProperty Name="PrenomPers" ColumnName="PrenomPers" />
+          <ScalarProperty Name="AdressePers" ColumnName="AdressePers" />
+          <ScalarProperty Name="TelPers" ColumnName="TelPers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

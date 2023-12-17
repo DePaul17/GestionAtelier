@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BD_GLAtelierModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="idPers" />
+    </Key>
+    <Property Name="idPers" Type="Int32" Nullable="false" />
+    <Property Name="CNIClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SexeClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Facture">
+    <Key>
+      <PropertyRef Name="idPers" />
+    </Key>
+    <Property Name="idPers" Type="Int32" Nullable="false" />
+    <Property Name="qteF" Type="Int32" />
+    <Property Name="designationF" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prixUnitF" Type="Int32" />
+    <Property Name="montantF" Type="Int32" />
+    <Property Name="DateHeureF" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Gerant">
+    <Key>
+      <PropertyRef Name="idPers" />
+    </Key>
+    <Property Name="idPers" Type="Int32" Nullable="false" />
+    <Property Name="idGer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mdpGer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mesure">
+    <Key>
+      <PropertyRef Name="idPers" />
+    </Key>
+    <Property Name="idPers" Type="Int32" Nullable="false" />
+    <Property Name="taille" Type="Int32" />
+    <Property Name="stature" Type="Int32" />
+    <Property Name="tour_poitrine" Type="Int32" />
+    <Property Name="tour_taille" Type="Int32" />
+    <Property Name="tour_hanche" Type="Int32" />
+    <Property Name="long_manche" Type="Int32" />
+    <Property Name="tour_cou" Type="Int32" />
+    <Property Name="long_pant" Type="Int32" />
+    <Property Name="long_dev" Type="Int32" />
+    <Property Name="tour_bras" Type="Int32" />
+    <Property Name="hauteur_poitrine" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Personne">
+    <Key>
+      <PropertyRef Name="idPers" />
+    </Key>
+    <Property Name="idPers" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomPers" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrenomPers" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AdressePers" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TelPers" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="BD_GLAtelierEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Client" EntityType="Self.Client" />
+    <EntitySet Name="Facture" EntityType="Self.Facture" />
+    <EntitySet Name="Gerant" EntityType="Self.Gerant" />
+    <EntitySet Name="mesure" EntityType="Self.mesure" />
+    <EntitySet Name="Personne" EntityType="Self.Personne" />
+  </EntityContainer>
+</Schema>

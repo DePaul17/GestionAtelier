@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BD_GLAtelierModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="idPers" />
+    </Key>
+    <Property Name="idPers" Type="int" Nullable="false" />
+    <Property Name="CNIClient" Type="nvarchar" MaxLength="50" />
+    <Property Name="SexeClient" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Facture">
+    <Key>
+      <PropertyRef Name="idPers" />
+    </Key>
+    <Property Name="idPers" Type="int" Nullable="false" />
+    <Property Name="qteF" Type="int" />
+    <Property Name="designationF" Type="nvarchar" MaxLength="50" />
+    <Property Name="prixUnitF" Type="int" />
+    <Property Name="montantF" Type="int" />
+    <Property Name="DateHeureF" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Gerant">
+    <Key>
+      <PropertyRef Name="idPers" />
+    </Key>
+    <Property Name="idPers" Type="int" Nullable="false" />
+    <Property Name="idGer" Type="nvarchar" MaxLength="50" />
+    <Property Name="mdpGer" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="mesure">
+    <Key>
+      <PropertyRef Name="idPers" />
+    </Key>
+    <Property Name="idPers" Type="int" Nullable="false" />
+    <Property Name="taille" Type="int" />
+    <Property Name="stature" Type="int" />
+    <Property Name="tour_poitrine" Type="int" />
+    <Property Name="tour_taille" Type="int" />
+    <Property Name="tour_hanche" Type="int" />
+    <Property Name="long_manche" Type="int" />
+    <Property Name="tour_cou" Type="int" />
+    <Property Name="long_pant" Type="int" />
+    <Property Name="long_dev" Type="int" />
+    <Property Name="tour_bras" Type="int" />
+    <Property Name="hauteur_poitrine" Type="int" />
+  </EntityType>
+  <EntityType Name="Personne">
+    <Key>
+      <PropertyRef Name="idPers" />
+    </Key>
+    <Property Name="idPers" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomPers" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrenomPers" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdressePers" Type="nvarchar" MaxLength="50" />
+    <Property Name="TelPers" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="BD_GLAtelierModelStoreContainer">
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Facture" EntityType="Self.Facture" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gerant" EntityType="Self.Gerant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mesure" EntityType="Self.mesure" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Personne" EntityType="Self.Personne" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
